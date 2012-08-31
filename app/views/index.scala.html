@@ -5,6 +5,8 @@
     <title>Where 2 Play </title>
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
     <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script src="@routes.Assets.at("javascripts/googleMapsDraw.js")" type="text/javascript"></script>
 </head>
 <body>
 
@@ -84,6 +86,11 @@
         });
 
     </script>
+
+    <br/><br/>
+    <a name="countryStats"/>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
 
 </body>
 </html>
