@@ -55,7 +55,7 @@
                     canvasContext.beginPath();
                     var x = canvasCenterX + data.longitude * canvasCenterX / 180,
                         y = canvasCenterY - data.latitude  * canvasCenterY / 90;
-                    canvasContext.arc(x, y, 1, 0, PI2);
+                    canvasContext.arc(x, y, 5, 0, PI2);
                     canvasContext.fill();
                 }, false);
 
