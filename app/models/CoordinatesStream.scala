@@ -9,7 +9,7 @@ import play.api.libs.json
 import play.api.libs.json.Json
 import play.api.libs.json.JsArray
 
-case class Coordinate(latitude: BigDecimal, longitude: BigDecimal)
+case class Coordinate(latitude: BigDecimal, longitude: BigDecimal, cityname: String)
 
 object CoordinatesStream {
 
@@ -32,7 +32,8 @@ object CoordinatesStream {
       val elements = Json.parse(line)
       try {
         Some(Coordinate(latitude  = (elements \ "latitude").as[String].toDouble,
-                        longitude = (elements \ "longitude").as[String].toDouble))
+                        longitude = (elements \ "longitude").as[String].toDouble,
+                        cityname = (elements \ "cityName").as[String]))
       } catch {
         case e: Exception => Logger.error("error while parsing line: " + line, e); None
       }

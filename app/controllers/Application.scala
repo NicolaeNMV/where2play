@@ -21,7 +21,8 @@ object Application extends Controller {
   val asJson: Enumeratee[Coordinate, JsValue] = Enumeratee.map[Coordinate] {
     coordinate => toJson ( Map (
       "latitude" -> toJson(coordinate.latitude.toString()),
-      "longitude" -> toJson(coordinate.longitude.toString())
+      "longitude" -> toJson(coordinate.longitude.toString()),
+      "cityname" -> toJson(coordinate.cityname)
     ) )
   }
 
